@@ -195,7 +195,4 @@ struct tm* get_time(void) {
     localtime_r(&now, timeinfo);
 
     return timeinfo;
-
-    strftime(strftime_buf, sizeof(strftime_buf), "%c", timeinfo);
-    ESP_LOGI(TAG, "The current date/time in Prague is: %s", strftime_buf);
 }
