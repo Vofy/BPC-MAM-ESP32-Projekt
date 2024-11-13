@@ -84,11 +84,11 @@ static void uart_com(int *period)
             else if (!strncmp((char *)data, "MAC?", 4))
             {
                 uint64_t chip_mac = 0LL;
-    esp_efuse_mac_get_default((uint8_t *)(&chip_mac));
-
-    char *response = (char *)malloc(16 * sizeof(char));
-    sprintf(response, "%llx", chip_mac);
-    uart_write_bytes(ECHO_UART_PORT_NUM, response, strlen(response));
+                esp_efuse_mac_get_default((uint8_t *)(&chip_mac));
+            
+                char *response = (char *)malloc(16 * sizeof(char));
+                sprintf(response, "%llx", chip_mac);
+                uart_write_bytes(ECHO_UART_PORT_NUM, response, strlen(response));
             }
             else
             {
